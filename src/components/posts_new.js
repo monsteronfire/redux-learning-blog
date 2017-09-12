@@ -16,9 +16,14 @@ class PostsNew extends React.Component {
     );
   }
 
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
+    const { handleSubmit } = this.props;
     return (
-      <form className='posts-new'>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className='posts-new'>
         <Field
           label='Title'
           name='title'
@@ -34,6 +39,7 @@ class PostsNew extends React.Component {
           name='content'
           component={this.renderField}
         />
+        <button type='submit' className='btn btn-primary'>Submit</button>
       </form>
     );
   }
@@ -50,7 +56,7 @@ function validate(values) {
     errors.categories = "Enter categories";
   }
 
-  if (!values.content values.content.length < 10) {
+  if (!values.content) {
     errors.content = "Enter content";
   }
 
