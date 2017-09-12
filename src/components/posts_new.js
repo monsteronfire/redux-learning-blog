@@ -38,6 +38,25 @@ class PostsNew extends React.Component {
   }
 }
 
+function validate(values) {
+  const errors = {};
+
+  if (!values.title) {
+    errors.title = "Enter a title";
+  }
+
+  if (!values.categories) {
+    errors.categories = "Enter categories";
+  }
+
+  if (!values.content values.content.length < 10) {
+    errors.content = "Enter content";
+  }
+
+  return errors;
+}
+
 export default reduxForm({
+  validate: validate,
   form: 'PostsNewForm'
 })(PostsNew);
