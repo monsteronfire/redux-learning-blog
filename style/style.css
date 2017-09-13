@@ -1,3 +1,7 @@
 body {
   background-color: #EEEEEE;
 }
+
+form a {
+  margin-left: 5px;
+}
