@@ -38,7 +38,8 @@ export function fetchPost(id) {
 }
 
 export function deletePost(id, callback) {
-  const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+  const request = axios
+    .delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
     .then(() => callback());
 
   return {

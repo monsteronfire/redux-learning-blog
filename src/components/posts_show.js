@@ -30,8 +30,9 @@ class PostsShow extends React.Component {
         <Link to="/">Back to Index</Link>
         <button
           className="btn btn-danger pull-xs-right"
-          onClick={this.onDeletetClick.bind(this)}
+          onClick={this.onDeleteClick.bind(this)}
         >
+          Delete Post
         </button>
         <h3>{post.title}</h3>
         <h6>Categories: {post.categories}</h6>
